@@ -1,6 +1,6 @@
 Name:		texlive-charissil
 Version:	64998
-Release:	1
+Release:	2
 Summary:	CharisSIL fonts with support for all LaTeX engines
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/charissil
