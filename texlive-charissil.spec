@@ -3,7 +3,7 @@ Version:	64998
 Release:	2
 Summary:	CharisSIL fonts with support for all LaTeX engines
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/charissil
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/charissil
 License:	ofl lppl
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/charissil.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/charissil.doc.r%{version}.tar.xz
