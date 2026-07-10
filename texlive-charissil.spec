@@ -1,43 +1,24 @@
-Name:		texlive-charissil
-Version:	64998
-Release:	2
+%global tl_name charissil
+%global tl_revision 78931
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	6.101
+Release:	%{tl_revision}.1
 Summary:	CharisSIL fonts with support for all LaTeX engines
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/charissil
+URL:		https://www.ctan.org/tex-archive/fonts/charissil
 License:	ofl lppl
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/charissil.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/charissil.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/charissil.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/charissil.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides the CharisSIL family of fonts adapted by
-SIL International from Bitstream Charter in TrueType format,
-with support for LaTeX, pdfLaTeX, XeLaTeX and LuaLaTeX.
+This package provides the CharisSIL family of fonts adapted by SIL
+International from Bitstream Charter in TrueType format, with support
+for LaTeX, pdfLaTeX, XeLaTeX and LuaLaTeX.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/charissil
-%{_texmfdistdir}/fonts/vf/SIL/charissil
-%{_texmfdistdir}/fonts/type1/SIL/charissil
-%{_texmfdistdir}/fonts/truetype/SIL/charissil
-%{_texmfdistdir}/fonts/tfm/SIL/charissil
-%{_texmfdistdir}/fonts/map/dvips/charissil
-%{_texmfdistdir}/fonts/enc/dvips/charissil
-%doc %{_texmfdistdir}/doc/fonts/charissil
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
